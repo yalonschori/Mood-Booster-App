@@ -1,11 +1,16 @@
 # UI and Controller
+import os
 import customtkinter as ctk
 from ui_elements import Custom_button
 from api_requests import Api_requests
 from CTkMessagebox import CTkMessagebox
+from dotenv import load_dotenv
 
 
-API_KEY = "live_xZ6g5Gx3Q5Gtumbfef9BT7gBgEfW1yPBZhmX0gZgJ7W3Xf2xsIJdKi6cqqjKvZKT"  # the key for the api so that the api will work.
+load_dotenv()
+
+
+API_KEY = os.environ.get("API_KEY")
 dog_url = "https://api.thedogapi.com/v1/images/search"
 cat_url = "https://api.thecatapi.com/v1/images/search"
 headers = {"x-api-key": API_KEY}
